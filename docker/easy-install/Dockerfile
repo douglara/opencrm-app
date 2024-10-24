@@ -1,5 +1,4 @@
-FROM debian:trixie
-
+FROM ruby:3.3.4
 
 ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=password
@@ -21,38 +20,26 @@ RUN apt-get update && apt-get install -y \
   libpq-dev \
   redis-server \
   supervisor \
-  postgresql-16-pgvector \
-  libssl-dev openssl \
   wget \
-  procps curl ca-certificates gnupg2 \
+  procps \
+  curl \
+  ca-certificates \
+  gnupg2 \
   libz-dev \
   git
 
+# Install postgresql 16 and pgvector
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt bookworm-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
+  && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+
+RUN apt-get update && apt-get install -y \
+  postgresql-16 \
+  postgresql-16-pgvector
+
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
   && apt-get install -y nodejs && npm install --global yarn
-RUN npm config get registry prints: https://registry.npmjs.org
 
-## Install Ruby
-ENV OPENSSL_VERSION=1.1.1v
-RUN wget https://www.openssl.org/source/openssl-$OPENSSL_VERSION.tar.gz \
-  && tar -xzf openssl-$OPENSSL_VERSION.tar.gz \
-  && cd openssl-$OPENSSL_VERSION \
-  && ./config --prefix=/usr/local/openssl --openssldir=/usr/local/openssl shared zlib \
-  && make -j$(nproc) \
-  && make install \
-  && cd .. \
-  && rm -rf openssl-$OPENSSL_VERSION.tar.gz openssl-$OPENSSL_VERSION
-
-RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import - \
-    && curl -sSL https://rvm.io/pkuczynski.asc | gpg --import - \
-    && curl -sSL https://get.rvm.io | bash -s stable
-RUN echo 'export PATH="/usr/local/rvm/bin:$PATH"' >> /etc/profile.d/rvm.sh \
-    && echo '. /usr/local/rvm/scripts/rvm' >> /etc/profile.d/rvm.sh \
-    && /bin/sh -c ". /etc/profile.d/rvm.sh && rvm requirements" \
-    && /bin/sh -c ". /etc/profile.d/rvm.sh && rvm install 3.3.4 --with-openssl-dir=/usr/local/openssl" \
-    && /bin/sh -c ". /etc/profile.d/rvm.sh && rvm use 3.3.4 --default"
-ENV PATH="/usr/local/rvm/rubies/ruby-3.3.4/bin:/usr/local/rvm/bin:${PATH}"
-RUN ruby -v && openssl version
+RUN ruby -v
 RUN gem install bundler
 
 ## Install app
