@@ -82,7 +82,7 @@ Rails.application.routes.draw do
     resources :attachments, only: [:destroy]
     resources :stages, only: [:show]
   end
-  if ENV.fetch('ENABLE_USER_SIGNUP', 'true') == 'true'
+  if ENV.fetch('ENABLE_USER_SIGNUP', 'false') == 'true'
     devise_for :users, controllers: {
       registrations: 'users/registrations'
     }

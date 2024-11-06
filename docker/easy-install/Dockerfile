@@ -12,7 +12,7 @@ ENV REDIS_URL=redis://localhost:6379/0
 ENV MOTOR_AUTH_USERNAME=lovewoofed
 ENV MOTOR_AUTH_PASSWORD=lovewoofed
 ENV PORT=3001
-ENV ENABLE_USER_SIGNUP=true
+ENV ENABLE_USER_SIGNUP=false
 ENV FRONTEND_URL=http://0.0.0.0:3001
 
 RUN apt-get update && apt-get install -y \
