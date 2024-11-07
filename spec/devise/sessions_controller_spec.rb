@@ -1,6 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Devise::SessionsController, type: :request do
+  before do
+    ENV["ENABLE_USER_SIGNUP"] = "true"
+    Rails.application.reload_routes!
+  end
+
+  after do
+    ENV["ENABLE_USER_SIGNUP"] = "false"
+    Rails.application.reload_routes!
+  end
+
   let(:user) { create(:user) }
   let(:account) { create(:account) }
   let(:valid_params) do
