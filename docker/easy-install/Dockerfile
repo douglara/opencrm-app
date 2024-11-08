@@ -14,6 +14,8 @@ ENV MOTOR_AUTH_PASSWORD=lovewoofed
 ENV PORT=3001
 ENV ENABLE_USER_SIGNUP=false
 ENV FRONTEND_URL=http://0.0.0.0:3001
+ENV WEBSOCKET_URL=wss://example.com/cable
+ENV WEBSOCKET_ALLOWED_ORIGINS=http://example.com,http://example.*
 
 RUN apt-get update && apt-get install -y \
   build-essential \

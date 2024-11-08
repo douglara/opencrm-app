@@ -42,8 +42,13 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
-  # config.action_cable.url = "wss://example.com/cable"
-  # config.action_cable.allowed_request_origins = [ "http://example.com", /http:\/\/example.*/ ]
+  config.action_cable.url = ENV.fetch('WEBSOCKET_URL', 'wss://example.com/cable')
+
+  allowed_origins = ENV.fetch('WEBSOCKET_ALLOWED_ORIGINS', 'http://example.com,http://example.*').split(',').map do |origin|
+    origin.include?('*') ? Regexp.new(origin.gsub('*', '.*')) : origin
+  end
+
+  config.action_cable.allowed_request_origins = allowed_origins
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true

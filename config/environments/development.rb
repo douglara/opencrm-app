@@ -67,6 +67,14 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 
+  config.action_cable.url = ENV.fetch('WEBSOCKET_URL', 'wss://example.com/cable')
+
+  allowed_origins = ENV.fetch('WEBSOCKET_ALLOWED_ORIGINS', 'http://example.com,http://example.*').split(',').map do |origin|
+    origin.include?('*') ? Regexp.new(origin.gsub('*', '.*')) : origin
+  end
+
+  config.action_cable.allowed_request_origins = allowed_origins
+
   config.hosts = nil
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
