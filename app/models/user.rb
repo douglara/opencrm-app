@@ -8,7 +8,7 @@
 #  encrypted_password     :string           default(""), not null
 #  full_name              :string           default(""), not null
 #  job_description        :string           default("other"), not null
-#  language               :string           default("pt-BR"), not null
+#  language               :string           default("en"), not null
 #  notifications          :jsonb            not null
 #  phone                  :string
 #  remember_created_at    :datetime
@@ -25,6 +25,8 @@
 class User < ApplicationRecord
   has_one :installation
   has_many :webpush_subscriptions
+  has_many :deal_users, dependent: :destroy
+  has_many :deals, through: :deal_users
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

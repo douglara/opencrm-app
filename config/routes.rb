@@ -56,6 +56,7 @@ Rails.application.routes.draw do
       patch 'update_product', on: :member
       get 'edit_product', on: :member
       get 'deal_products', on: :member
+      get 'deal_users', on: :member
       get 'events_to_do', on: :member
       get 'events_done', on: :member
       get 'add_contact'
@@ -67,6 +68,9 @@ Rails.application.routes.draw do
     end
     resources :deal_products, only: %i[destroy new create] do
       get 'select_product_search', on: :collection
+    end
+    resources :deal_users, only: %i[destroy new create] do
+      get 'select_user_search', on: :collection
     end
 
     namespace :apps do

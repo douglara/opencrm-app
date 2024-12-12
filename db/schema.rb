@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_11_144315) do
+ActiveRecord::Schema[7.0].define(version: 2024_12_12_041456) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -141,6 +141,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_11_144315) do
     t.datetime "updated_at", null: false
     t.index ["deal_id"], name: "index_deal_products_on_deal_id"
     t.index ["product_id"], name: "index_deal_products_on_product_id"
+  end
+
+  create_table "deal_users", force: :cascade do |t|
+    t.bigint "deal_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deal_id", "user_id"], name: "index_deal_users_on_deal_id_and_user_id", unique: true
+    t.index ["deal_id"], name: "index_deal_users_on_deal_id"
+    t.index ["user_id"], name: "index_deal_users_on_user_id"
   end
 
   create_table "deals", force: :cascade do |t|
@@ -580,6 +590,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_11_144315) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "deal_products", "deals"
   add_foreign_key "deal_products", "products"
+  add_foreign_key "deal_users", "deals"
+  add_foreign_key "deal_users", "users"
   add_foreign_key "deals", "contacts"
   add_foreign_key "deals", "stages"
   add_foreign_key "motor_alert_locks", "motor_alerts", column: "alert_id"
