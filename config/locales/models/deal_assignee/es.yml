@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    models:
+      deal_assignee:
+        one: "Responsable"
+        other: "Responsables"
+        new: "Nuevo responsable"
+        edit: "Editar responsable"
+        add: "Añadir responsable"
+    attributes:
+      deal_assignee:
+        user: "Usuario"
+        deal: "Negocio"
+    errors:
+      models:
+        deal_assignee:
+          attributes:
+            user_id:
+              taken: "ya está asociado a este negocio"

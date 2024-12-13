@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      deal_assignee:
+        one: "Assignee"
+        other: "Assignees"
+        new: "New assignee"
+        edit: "Edit assignee"
+        add: "Add assignee"
+    attributes:
+      deal_assignee:
+        user: "User"
+        deal: "Deal"
+    errors:
+      models:
+        deal_assignee:
+          attributes:
+            user_id:
+              taken: "is already associated with this deal"

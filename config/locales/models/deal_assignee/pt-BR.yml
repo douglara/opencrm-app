@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      deal_assignee:
+        one: "Responsável"
+        other: "Responsáveis"
+        new: "Novo responsável"
+        edit: "Editar responsável"
+        add: "Adicionar responsável"
+    attributes:
+      deal_assignee:
+        user: "Usuário"
+        deal: "Negócio"
+    errors:
+      models:
+        deal_assignee:
+          attributes:
+            user_id:
+              taken: "já está associado a este negócio"
