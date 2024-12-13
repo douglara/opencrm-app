@@ -25,8 +25,8 @@
 class User < ApplicationRecord
   has_one :installation
   has_many :webpush_subscriptions
-  has_many :deal_users, dependent: :destroy
-  has_many :deals, through: :deal_users
+  has_many :deal_assignees, dependent: :destroy
+  has_many :deals, through: :deal_assignees
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

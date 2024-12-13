@@ -37,8 +37,8 @@ class Deal < ApplicationRecord
   has_many :activities
   has_many :contact_events, through: :primary_contact, source: :events
   has_many :deal_products, dependent: :destroy
-  has_many :deal_users, dependent: :destroy
-  has_many :users, through: :deal_users
+  has_many :deal_assignees, dependent: :destroy
+  has_many :users, through: :deal_assignees
 
   accepts_nested_attributes_for :contact
 
