@@ -1,5 +1,5 @@
-<%= turbo_frame_tag @deal_user do %>
-  <%= form_with(model: @deal_user, url: account_deal_users_path) do |form| %>
+<%= turbo_frame_tag @deal_assignee do %>
+  <%= form_with(model: @deal_assignee, url: account_deal_assignees_path) do |form| %>
     <%= form.hidden_field :deal_id %>
     <div class=" flex items-center h-16">
       <p class="flex items-center m-0 mr-auto typography-body-s-lh150 text-dark-gray-palette-p1">
@@ -10,10 +10,10 @@
         <i data-lucide="x" height="16"></i>
       <% end %>
     </div>
-    <% if @deal_user.errors.any? %>
+    <% if @deal_assignee.errors.any? %>
       <div class='mb-4'>
         <ul>
-          <% @deal_user.errors.each do |error| %>
+          <% @deal_assignee.errors.each do |error| %>
             <li class="typography-body-s-lh150 text-auxiliary-palette-red"><%= error.full_message %></li>
           <% end %>
         </ul>
@@ -21,7 +21,7 @@
     <% end %>
     <div class='mb-2.5'>
       <%= turbo_frame_tag :select_user_search,
-            src: select_user_search_account_deal_users_path(current_user.account), class: "relative" do %>
+            src: select_user_search_account_deal_assignees_path(current_user.account), class: "relative" do %>
         <%= render 'components/loading' %>
       <% end %>
     </div>
