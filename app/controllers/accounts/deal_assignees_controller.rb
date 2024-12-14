@@ -32,11 +32,11 @@ class Accounts::DealAssigneesController < InternalController
 
   def select_user_search
     @users = if params[:query].present?
-               current_user.account.users.where(
-                 'full_name ILIKE :search', search: "%#{params[:query]}%"
+               User.where(
+                 'full_name ILIKE :search OR email ILIKE :search OR phone ILIKE :search', search: "%#{params[:query]}%"
                ).order(updated_at: :desc).limit(5)
              else
-               current_user.account.users.order(updated_at: :desc).limit(5)
+               User.order(updated_at: :desc).limit(5)
              end
   end
 
@@ -47,7 +47,7 @@ class Accounts::DealAssigneesController < InternalController
   end
 
   def set_deal
-    @deal = current_user.account.deals.find(params[:deal_id])
+    @deal = Deal.find(params[:deal_id])
   end
 
   def set_deal_assignee
