@@ -316,6 +316,29 @@ RSpec.describe Accounts::DealsController, type: :request do
     end
   end
 
+  describe 'GET /accounts/{account.id}/deals/:id/deal_assignees' do
+    let!(:deal) { create(:deal, stage:, contact:) }
+    let!(:deal_assignee) { create(:deal_assignee, deal:, user:) }
+
+    context 'when it is an unauthenticated user' do
+      it 'returns unauthorized' do
+        get "/accounts/#{account.id}/deals/#{deal.id}/deal_assignees"
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+
+    context 'when it is an authenticated user' do
+      before do
+        sign_in(user)
+      end
+
+      it 'should return only deal_assignees' do
+        get "/accounts/#{account.id}/deals/#{deal.id}/deal_assignees"
+        expect(response.body).to include(user.full_name)
+      end
+    end
+  end
+
   describe 'GET /accounts/{account.id}/deals/:id/edit_product?deal_product_id={deal_product.id}' do
     let!(:deal) { create(:deal, account:, stage:, contact:) }
     let(:product) { create(:product, account:) }
