@@ -9,6 +9,7 @@ RSpec.describe Accounts::DealsController, type: :request do
   let!(:contact) { create(:contact, account:) }
   let(:event) { create(:event, account:, deal:, kind: 'activity') }
   let(:last_event) { Event.last }
+  let(:last_deal) { Deal.last }
 
   describe 'POST /accounts/{account.id}/deals' do
     let(:valid_params) { { deal: { name: 'Deal 1', contact_id: contact.id, stage_id: stage.id } } }
@@ -32,8 +33,9 @@ RSpec.describe Accounts::DealsController, type: :request do
                  params: valid_params
           end.to change(Deal, :count).by(1)
                                      .and change(Event, :count).by(1)
-          expect(response).to redirect_to(account_deal_path(account, Deal.last))
+          expect(response).to redirect_to(account_deal_path(account, last_deal))
           expect(last_event.kind).to eq('deal_opened')
+          expect(last_deal.creator).to eq(user)
         end
       end
     end
@@ -161,7 +163,7 @@ RSpec.describe Accounts::DealsController, type: :request do
   end
 
   describe 'GET /accounts/{account.id}/deals/:id' do
-    let(:deal) { create(:deal, account:, stage:) }
+    let(:deal) { create(:deal, account:, stage:, creator: user) }
 
     context 'when it is an unauthenticated user' do
       it 'returns unauthorized' do
@@ -181,6 +183,18 @@ RSpec.describe Accounts::DealsController, type: :request do
 
         expect(response).to have_http_status(:success)
         expect(response.body).to include(deal.name)
+        expect(response.body).to include(deal.creator.full_name)
+      end
+      context 'when there is no creator associated with the deal' do
+        let(:deal_with_no_creator) { create(:deal, account:, stage:) }
+
+        it 'should not display Created by field' do
+          get "/accounts/#{account.id}/deals/#{deal_with_no_creator.id}"
+
+          expect(response).to have_http_status(:success)
+          expect(response.body).to include(deal_with_no_creator.name)
+          expect(response.body).not_to include('Created by')
+        end
       end
     end
   end
@@ -215,6 +229,28 @@ RSpec.describe Accounts::DealsController, type: :request do
           end.to change(Deal, :count).by(-1) and change(Contact, :count).by(-1)
           expect(account.events.count).to eq(0)
         end
+      end
+    end
+  end
+
+  describe 'GET /accounts/{account.id}/deals/:id/edit' do
+    let!(:deal) { create(:deal, account:, stage:, contact:, creator: user) }
+
+    context 'when it is an unauthenticated user' do
+      it 'returns unauthorized' do
+        get "/accounts/#{account.id}/deals/#{deal.id}/edit"
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+
+    context 'when it is an authenticated user' do
+      before do
+        sign_in(user)
+      end
+      it 'should show edit deal page' do
+        get "/accounts/#{account.id}/deals/#{deal.id}/edit"
+        expect(response).to have_http_status(200)
+        expect(response).not_to include('Created by')
       end
     end
   end

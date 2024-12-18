@@ -81,6 +81,7 @@ class Accounts::DealsController < InternalController
   def create
     @deal = current_user.account.deals.new(deal_params)
     @deal.contact.account = @deal.account
+    @deal.creator = current_user
     @stages = current_user.account.stages
 
     # @deal = DealBuilder.new(current_user, deal_params).perform

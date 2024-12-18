@@ -10,18 +10,21 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  contact_id        :bigint           not null
+#  created_by_id     :integer
 #  pipeline_id       :bigint
 #  stage_id          :bigint           not null
 #
 # Indexes
 #
-#  index_deals_on_contact_id   (contact_id)
-#  index_deals_on_pipeline_id  (pipeline_id)
-#  index_deals_on_stage_id     (stage_id)
+#  index_deals_on_contact_id     (contact_id)
+#  index_deals_on_created_by_id  (created_by_id)
+#  index_deals_on_pipeline_id    (pipeline_id)
+#  index_deals_on_stage_id       (stage_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (contact_id => contacts.id)
+#  fk_rails_...  (created_by_id => users.id) ON DELETE => nullify
 #  fk_rails_...  (stage_id => stages.id)
 #
 class Deal < ApplicationRecord
@@ -32,6 +35,7 @@ class Deal < ApplicationRecord
   belongs_to :contact
   belongs_to :stage
   belongs_to :pipeline
+  belongs_to :creator, class_name: 'User', foreign_key: 'created_by_id', optional: true
   acts_as_list scope: :stage
   has_many :events, dependent: :destroy
   has_many :activities
@@ -44,7 +48,7 @@ class Deal < ApplicationRecord
 
   enum status: { 'open': 'open', 'won': 'won', 'lost': 'lost' }
 
-  FORM_FIELDS = [:name]
+  FORM_FIELDS = %i[name creator]
 
   before_validation do
     self.account = @current_account if account.blank? && @current_account.present?

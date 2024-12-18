@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_12_13_002433) do
+ActiveRecord::Schema[7.0].define(version: 2024_12_18_180255) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -163,7 +163,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_12_13_002433) do
     t.datetime "updated_at", null: false
     t.bigint "pipeline_id"
     t.integer "position", default: 1, null: false
+    t.integer "created_by_id"
     t.index ["contact_id"], name: "index_deals_on_contact_id"
+    t.index ["created_by_id"], name: "index_deals_on_created_by_id"
     t.index ["pipeline_id"], name: "index_deals_on_pipeline_id"
     t.index ["stage_id"], name: "index_deals_on_stage_id"
   end
@@ -594,6 +596,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_12_13_002433) do
   add_foreign_key "deal_products", "products"
   add_foreign_key "deals", "contacts"
   add_foreign_key "deals", "stages"
+  add_foreign_key "deals", "users", column: "created_by_id", on_delete: :nullify
   add_foreign_key "motor_alert_locks", "motor_alerts", column: "alert_id"
   add_foreign_key "motor_alerts", "motor_queries", column: "query_id"
   add_foreign_key "motor_note_tag_tags", "motor_note_tags", column: "tag_id"

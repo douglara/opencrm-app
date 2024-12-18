@@ -32,6 +32,7 @@ RSpec.describe 'Deals API', type: :request do
                                      .and change(Event, :count).by(1)
 
           expect(response).to have_http_status(:success)
+          expect(last_deal.creator).to eq(user)
         end
       end
     end

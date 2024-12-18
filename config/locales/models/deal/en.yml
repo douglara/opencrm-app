@@ -12,3 +12,5 @@ en:
       deal:
         name: Name
         stage_id: Stage
+        creator: Created by
+        created_by_id: ID Creator

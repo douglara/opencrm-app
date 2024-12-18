@@ -27,6 +27,11 @@ class User < ApplicationRecord
   has_many :webpush_subscriptions
   has_many :deal_assignees, dependent: :destroy
   has_many :deals, through: :deal_assignees
+  has_many :created_deals,
+           class_name: 'Deal',
+           foreign_key: 'created_by_id',
+           dependent: :nullify,
+           inverse_of: :creator
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

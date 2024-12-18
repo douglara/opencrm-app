@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Accounts::UsersController, type: :request do
   let!(:account) { create(:account) }
-  let!(:user) { create(:user, account: account) }
-  let(:es_user) { create(:user, :es_language, account: account) }
+  let!(:user) { create(:user, account:) }
+  let(:es_user) { create(:user, :es_language, account:) }
 
   describe 'POST /accounts/{account.id}/users' do
     let(:valid_params) do
@@ -177,8 +177,8 @@ RSpec.describe Accounts::UsersController, type: :request do
         it 'when password is blank' do
           params = { user: { full_name: 'Yukio Updated', email: 'yukio@email.com', password: '',
                              password_confirmation: '' } }
-          patch "/accounts/#{account.id}/users/#{user.id}",
-                params: params
+          patch("/accounts/#{account.id}/users/#{user.id}",
+                params:)
           expect(User.first.full_name).to eq('Yukio Updated')
           expect(response).to redirect_to(edit_account_user_path(account.id, user.id))
         end
@@ -290,10 +290,26 @@ RSpec.describe Accounts::UsersController, type: :request do
       end
       context 'delete the user' do
         it do
-          delete "/accounts/#{account.id}/users/#{user.id}"
-          expect(User.count).to eq(0)
+          expect do
+            delete "/accounts/#{account.id}/users/#{user.id}"
+          end.to change(User, :count).by(-1)
+
           expect(response.status).to eq(302)
           expect(flash[:notice]).to include('User was successfully destroyed.')
+        end
+      end
+      context 'when a deal belongs to a user' do
+        let!(:deal) { create(:deal, creator: user) }
+        let(:last_deal) { Deal.last }
+        it 'should delete user and update deal creator to nil' do
+          expect do
+            delete "/accounts/#{account.id}/users/#{user.id}"
+          end.to change(User, :count).by(-1)
+                                     .and change(Deal, :count).by(0)
+
+          expect(response.status).to eq(302)
+          expect(flash[:notice]).to include('User was successfully destroyed.')
+          expect(last_deal.creator).to eq(nil)
         end
       end
     end

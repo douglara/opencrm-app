@@ -7,6 +7,7 @@ class DealBuilder
 
   def build
     @deal = Deal.new(deal_params(@params))
+    @deal.creator = @user
     build_contact
     @deal
   end

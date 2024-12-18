@@ -2,13 +2,15 @@ pt-BR:
   activerecord:
     models:
       deal:
-        one: 'Negócio'
-        other: 'Negócios'
-        new: 'Novo negócio'
-        edit: 'Editar negócio'
+        one: "Negócio"
+        other: "Negócios"
+        new: "Novo negócio"
+        edit: "Editar negócio"
         import_file_success: "Criado com sucesso id %{deal_id}"
         import_file_failed: "Erro na criação %{message_error}"
     attributes:
       deal:
         name: Nome
         stage_id: Estágio
+        creator: Criado por
+        created_by_id: ID do criador

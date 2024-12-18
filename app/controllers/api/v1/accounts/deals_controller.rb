@@ -10,7 +10,7 @@ class Api::V1::Accounts::DealsController < Api::V1::InternalController
 
   def create
     @deal = Deal.new(deal_params)
-
+    @deal.creator = @current_user
     if @deal.save
       render json: @deal, status: :created
     else
