@@ -79,12 +79,8 @@ class Accounts::DealsController < InternalController
 
   # POST /deals or /deals.json
   def create
-    @deal = current_user.account.deals.new(deal_params)
-    @deal.contact.account = @deal.account
-    @deal.creator = current_user
     @stages = current_user.account.stages
-
-    # @deal = DealBuilder.new(current_user, deal_params).perform
+    @deal = DealBuilder.new(current_user, deal_params).perform
 
     if @deal.save
       redirect_to account_deal_path(current_user.account, @deal)
