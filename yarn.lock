@@ -981,18 +981,18 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@hotwired/turbo-rails@^7.0.0-rc.3":
-  version "7.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.0.0-rc.3.tgz#ebb088a0c9f6eed23a99b396c2ae59d0c57644e0"
-  integrity sha512-J5NLTGSvlFW86pRxEm2WlYKdNeIkmQT9ZmIo1Rputj7BLymZYDCglaZ2vhMVFnQJ4qXEq4ttS3xeQt3cCG2Tdg==
+"@hotwired/turbo-rails@^7.1.3":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.3.0.tgz#422c21752509f3edcd6c7b2725bbe9e157815f51"
+  integrity sha512-fvhO64vp/a2UVQ3jue9WTc2JisMv9XilIC7ViZmXAREVwiQ2S4UC7Go8f9A1j4Xu7DBI6SbFdqILk5ImqVoqyA==
   dependencies:
-    "@hotwired/turbo" "^7.0.0-rc.3"
-    "@rails/actioncable" "^6.0.0"
+    "@hotwired/turbo" "^7.3.0"
+    "@rails/actioncable" "^7.0"
 
-"@hotwired/turbo@^7.0.0-rc.3":
-  version "7.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.0.0-rc.3.tgz#f31289fc185e09524445471d1b46b59cac0f99cb"
-  integrity sha512-Xiqtb2fvKcnkc/6cJNx8x2+KHswJeMmNLXPSc8jIE6sYAhnL8pDY2ewiV3x5JS/y+/yWhQSMMHONBwHt8ykYKQ==
+"@hotwired/turbo@^7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.3.0.tgz#2226000fff1aabda9fd9587474565c9929dbf15d"
+  integrity sha512-Dcu+NaSvHLT7EjrDrkEmH4qET2ZJZ5IcCWmNXxNQTBwlnE5tBZfN6WxZ842n5cHV52DH/AKNirbPBtcEXDLW4g==
 
 "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
@@ -1145,34 +1145,41 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
-"@rails/actioncable@^6.0.0":
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.1.4.tgz#c3c5a9f8302c429af9722b6c50ab48049016d2a3"
-  integrity sha512-0LmSKJTuo2dL6BQ+9xxLnS9lbkyfz2mBGeBnQ2J7o9Bn0l0q+ZC6VuoZMZZXPvABI4QT7Nfknv5WhfKYL+boew==
+"@rails/actioncable@^7.0", "@rails/actioncable@^7.1.501":
+  version "7.2.201"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.2.201.tgz#bfb3da01b3e2462f5a18f372c52dedd7de76037f"
+  integrity sha512-wsTdWoZ5EfG5k3t7ORdyQF0ZmDEgN4aVPCanHAiNEwCROqibSZMXXmCbH7IDJUVri4FOeAVwwbPINI7HVHPKBw==
 
-"@rails/actiontext@^6.1.4-1":
-  version "6.1.4-1"
-  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-6.1.4-1.tgz#c75fbeeb7860c2f508150ad003c0c0d0c97c7584"
-  integrity sha512-dS7AdkJtSyuX2PXipCTNOKEg5G/ftwS+FmM5+8Zxbo35tgs08hfYFPh0muoj5eEkshwV67kEEV/iHgX8PMLh4w==
+"@rails/actiontext@^7.1.501":
+  version "7.2.201"
+  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-7.2.201.tgz#2a32eb5f9ae54830abb556fb11985c42097a62be"
+  integrity sha512-p8sXtT6aXCB/b9FjnLTiHs8oI/RKl4Pxj+H2M79CxzLmJU14DM4rqFIf+YGIW3R1m1krIuCnP1HTYSlgSGEd9g==
   dependencies:
-    "@rails/activestorage" "^6.0.0"
+    "@rails/activestorage" ">= 7.2.0-alpha"
 
-"@rails/activestorage@^6.0.0":
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-6.1.4.tgz#7772f539cc846df5f4364fc57ccb48860f9e966e"
-  integrity sha512-1Tm8uaVBhLTDEG4YaFPvqguhjbUGSPVItm0CfkRpIFZIkybWzFAxatIrk4YVOOxB8ZdXS7GdeYa1qVwjdiDkgQ==
+"@rails/activestorage@>= 7.2.0-alpha":
+  version "8.0.100"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-8.0.100.tgz#a04f84b8e2359dce5c9cac0d2f408cd530d1495a"
+  integrity sha512-/fIFav9RFFzQKK3a91O2OOdnHxPx+mBIR6wZDxeH9bcbDf2dZqhVcr5DGRJuhkF8U7C3s0tYvYafscmkBNRlHQ==
   dependencies:
-    spark-md5 "^3.0.0"
+    spark-md5 "^3.0.1"
+
+"@rails/activestorage@^7.1.501":
+  version "7.2.201"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.2.201.tgz#9c8e73affa5204bd14d8b339a863fa4fcd0285e3"
+  integrity sha512-7hCJsh2eULFwki4MhDGVLSdAABkmjQkCm9LNE2UK6Ti9uRMkhpER+PoLFLJ2QlJkahZuN62gbCnOnLczRxZSdA==
+  dependencies:
+    spark-md5 "^3.0.1"
 
 "@rails/request.js@^0.0.8":
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@rails/request.js/-/request.js-0.0.8.tgz#5e2e8da15013b1af7f04d759e4e9d1cff981865c"
   integrity sha512-ysHYZDl+XjBwFVXz7EI7XW+ZWiTFY8t7TrC/ahpAPt0p7NE4DZxm1nJQY9gmF4PBf+4pAYa+D/rLIGmrn1ZMvg==
 
-"@rails/ujs@^6.0.0":
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.1.4.tgz#093d5341595a02089ed309dec40f3c37da7b1b10"
-  integrity sha512-O3lEzL5DYbxppMdsFSw36e4BHIlfz/xusynwXGv3l2lhSlvah41qviRpsoAlKXxl37nZAqK+UUF5cnGGK45Mfw==
+"@rails/ujs@^7.1.501":
+  version "7.1.501"
+  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.1.501.tgz#e560a7b6885a12a659c4beb47f4336c8a9353056"
+  integrity sha512-7EDRGUlgns12IgP3SXVSaxA3CwRzbLOypPXn1EqEZiZ/NS/PwaQ/oa7Z2VRO4B46JifoVr0PYg+G5ERSGQJHxQ==
 
 "@rails/webpacker@5.4.2":
   version "5.4.2"
@@ -6697,10 +6704,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-spark-md5@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.1.tgz#83a0e255734f2ab4e5c466e5a2cfc9ba2aa2124d"
-  integrity sha512-0tF3AGSD1ppQeuffsLDIOWlKUd3lS92tFxcsrh5Pe3ZphhnoK+oXIBTzOAThZCiuINZLvpiLH/1VS1/ANEJVig==
+spark-md5@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
+  integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
 
 spdy-transport@^3.0.0:
   version "3.0.0"

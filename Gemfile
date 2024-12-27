@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.3.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '7.0.8.4'
+gem 'rails', '7.1.5.1'
 # Rails 6.1.7.7 compatibility
-gem 'loofah', '< 2.21.0'
+gem 'loofah', '2.23.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -34,7 +34,7 @@ gem 'image_processing'
 
 # Authentication
 gem 'acts_as_list'
-gem 'acts-as-taggable-on', '~> 9.0'
+gem 'acts-as-taggable-on', '12.0.0'
 gem 'cocoon'
 gem 'csv'
 gem 'devise'
