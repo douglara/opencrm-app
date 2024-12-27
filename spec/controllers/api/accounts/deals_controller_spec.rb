@@ -143,11 +143,11 @@ RSpec.describe 'Deals API', type: :request do
       end
       context 'when deal is not found' do
         it 'should raise error' do
-          expect do
-            patch "/api/v1/accounts/#{account.id}/deals/69",
+            patch("/api/v1/accounts/#{account.id}/deals/69",
                   headers: { 'Authorization': "Bearer #{user.get_jwt_token}" },
-                  params:
-          end.to raise_error(ActiveRecord::RecordNotFound)
+                  params:)
+
+          expect(response).to have_http_status(:not_found)
         end
       end
     end

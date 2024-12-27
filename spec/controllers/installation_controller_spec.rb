@@ -88,11 +88,10 @@ RSpec.describe InstallationController, type: :request do
 
           it 'should not create user and installation and raise route error' do
             first_installation.app_reload
-            expect do
-              get '/installation/create',
-                  params: { user: { email: 'yukio@email.com', full_name: 'Yukio teste' },
-                            installation: { id: 1, key1: 'key1teste', key2: 'key2teste', token: 'tokenteste' } }
-            end.to raise_error(ActionController::RoutingError)
+            get '/installation/create',
+                params: { user: { email: 'yukio@email.com', full_name: 'Yukio teste' },
+                          installation: { id: 1, key1: 'key1teste', key2: 'key2teste', token: 'tokenteste' } }
+            expect(response).to have_http_status(:not_found)
           end
         end
         context 'when installation status is in_progress' do
@@ -144,11 +143,10 @@ RSpec.describe InstallationController, type: :request do
           let!(:installation) { create(:installation, status: 'completed') }
           it 'should not create user and installation and raise route error' do
             first_installation.app_reload
-            expect do
-              get '/installation/create',
-                  params: { user: { email: 'yukio@email.com', full_name: 'Yukio teste' },
-                            installation: { id: 1, key1: 'key1teste', key2: 'key2teste', token: 'tokenteste' } }
-            end.to raise_error(ActionController::RoutingError)
+            get '/installation/create',
+                params: { user: { email: 'yukio@email.com', full_name: 'Yukio teste' },
+                          installation: { id: 1, key1: 'key1teste', key2: 'key2teste', token: 'tokenteste' } }
+            expect(response).to have_http_status(:not_found)
           end
         end
         context 'when installation status is in_progress' do
@@ -257,9 +255,8 @@ RSpec.describe InstallationController, type: :request do
           let!(:installation) { create(:installation, status: 'completed') }
           it 'should raise route error' do
             first_installation.app_reload
-            expect do
-              get '/installation/new'
-            end.to raise_error(ActionController::RoutingError)
+            get '/installation/new'
+            expect(response).to have_http_status(:not_found)
           end
         end
         context 'when installation status is in_progress' do
@@ -316,9 +313,8 @@ RSpec.describe InstallationController, type: :request do
           let!(:installation) { create(:installation, status: 'completed') }
           it 'should raise route error' do
             first_installation.app_reload
-            expect do
-              get '/installation/step_1'
-            end.to raise_error(ActionController::RoutingError)
+            get '/installation/step_1'
+            expect(response).to have_http_status(:not_found)
           end
         end
         context 'when installation status is in_progress' do
@@ -373,9 +369,8 @@ RSpec.describe InstallationController, type: :request do
           let!(:installation) { create(:installation, status: 'completed') }
           it 'should raise route error' do
             first_installation.app_reload
-            expect do
-              patch '/installation/update_step_1', params: { user: { full_name: 'Yukio', phone: '+552299887875' } }
-            end.to raise_error(ActionController::RoutingError)
+            patch '/installation/update_step_1', params: { user: { full_name: 'Yukio', phone: '+552299887875' } }
+            expect(response).to have_http_status(:not_found)
             expect(user.reload.full_name).not_to eq('Yukio')
           end
         end
