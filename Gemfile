@@ -85,7 +85,7 @@ group :development, :test do
   gem 'erb_lint', require: false
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rspec-rails', '~> 6.0.0'
+  gem 'rspec-rails', '7.1.0'
   gem 'rubocop', require: false
   gem 'ruby-lsp'
 end
