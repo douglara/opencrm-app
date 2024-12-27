@@ -1,5 +1,5 @@
 class Accounts::StagesController < InternalController
-  before_action :set_stage, only: %i[show deals]
+  before_action :set_stage, only: %i[show]
 
   def show
     @filter_status_deal = if params[:filter_status_deal].present?

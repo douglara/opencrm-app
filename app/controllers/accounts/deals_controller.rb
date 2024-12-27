@@ -2,7 +2,7 @@ class Accounts::DealsController < InternalController
   include ProductConcern
 
   before_action :set_deal,
-                only: %i[show edit update destroy events events_to_do events_done deal_products deal_assignees]
+                only: %i[show edit update destroy events_to_do events_done deal_products deal_assignees]
   before_action :set_deal_product, only: %i[edit_product
                                             update_product]
 
