@@ -235,7 +235,7 @@ RSpec.describe Accounts::Contacts::EventsController, type: :request do
             stub_request(:post, /contacts/)
               .to_return(body: invalid_send_text_response, status: 400, headers: { 'Content-Type' => 'application/json' })
           end
-          let(:contact_no_phone) { create(:contact, phone: '', full_name: 'yukio') }
+          let(:contact_no_phone) { create(:contact, phone: '') }
           it 'done should return false' do
             params = valid_params.deep_merge(event: { kind: 'evolution_api_message', app_type: 'Apps::EvolutionApi',
                                                       app_id: evolution_api_connected.id, send_now: 'true' })
