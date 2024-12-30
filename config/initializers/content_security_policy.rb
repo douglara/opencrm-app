@@ -24,5 +24,5 @@
 #   # config.content_security_policy_report_only = true
 # end
 Rails.application.config.content_security_policy do |policy|
-  policy.frame_ancestors :self, "*"
+  policy.frame_ancestors "*"
 end
