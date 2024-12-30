@@ -232,8 +232,10 @@ RSpec.describe Accounts::Contacts::EventsController, type: :request do
           before do
             stub_request(:post, /sendText/)
               .to_return(body: invalid_send_text_response, status: 400, headers: { 'Content-Type' => 'application/json' })
+            stub_request(:post, /contacts/)
+              .to_return(body: invalid_send_text_response, status: 400, headers: { 'Content-Type' => 'application/json' })
           end
-          let(:contact_no_phone) { create(:contact, account:, phone: '') }
+          let(:contact_no_phone) { create(:contact, phone: '', full_name: 'yukio') }
           it 'done should return false' do
             params = valid_params.deep_merge(event: { kind: 'evolution_api_message', app_type: 'Apps::EvolutionApi',
                                                       app_id: evolution_api_connected.id, send_now: 'true' })
@@ -326,7 +328,7 @@ RSpec.describe Accounts::Contacts::EventsController, type: :request do
                                                      headers: { 'Content-Type' => 'application/json' })
     end
 
-    let(:event) { create(:event, account:, contact:, deal:, kind: 'activity') }
+    let(:event) { create(:event, contact:, deal:, kind: 'activity') }
     context 'when it is unthenticated user' do
       it 'returns unauthorized' do
         patch "/accounts/#{account.id}/contacts/#{contact.id}/events/#{event.id}"
@@ -429,7 +431,7 @@ RSpec.describe Accounts::Contacts::EventsController, type: :request do
     end
   end
   describe 'DELETE /accounts/#{account.id}/contacts/#{contact.id}/events/#{event.id}' do
-    let(:event) { create(:event, account:, contact:, deal:, kind: 'activity') }
+    let(:event) { create(:event, contact:, deal:, kind: 'activity') }
     context 'when it is unthenticated user' do
       it 'returns unauthorized' do
         delete "/accounts/#{account.id}/contacts/#{contact.id}/events/#{event.id}"
