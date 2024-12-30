@@ -13,7 +13,7 @@ RSpec.describe Accounts::Apps::Chatwoots::GetConversationAndSendMessage, type: :
     it 'should have conversation' do
       stub_request(:post, /messages/)
         .to_return(body: message_response, status: 200, headers: { 'Content-Type' => 'application/json' })
-      stub_request(:post, /filter/)
+      stub_request(:get, /conversations/)
         .to_return(body: conversation_response, status: 200, headers: { 'Content-Type' => 'application/json' })
 
       result = Accounts::Apps::Chatwoots::GetConversationAndSendMessage.call(chatwoot, 2, 2, event)

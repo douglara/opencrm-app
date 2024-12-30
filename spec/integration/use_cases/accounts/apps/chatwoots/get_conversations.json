@@ -1,127 +1,1079 @@
 {
-  "meta": {
-      "mine_count": 0,
-      "unassigned_count": 1,
-      "all_count": 1
-  },
   "payload": [
-      {
-          "meta": {
-              "sender": {
-                  "additional_attributes": {},
-                  "availability_status": "offline",
-                  "email": null,
-                  "id": 2,
-                  "name": "Douglas Lara",
-                  "phone_number": "+554196910256",
-                  "identifier": "554196910256@s.whatsapp.net",
-                  "thumbnail": "https://chatwoot.woofedcrm.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBYzQ9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--289b85445d9322da8accad950077ab9a21bcbaa8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--3226d0ab8ca4fb0b85e4d42de6f326c8bab25e2d/218088560_1343083402861493_7003699211785604252_n.jpg",
-                  "custom_attributes": {},
-                  "last_activity_at": 1697569801,
-                  "created_at": 1697300326
-              },
-              "channel": "Channel::Api",
-              "hmac_verified": false
-          },
-          "id": 2,
-          "messages": [
-              {
-                  "id": 193,
-                  "content": "Teste2",
-                  "account_id": 1,
-                  "inbox_id": 2,
-                  "conversation_id": 2,
-                  "message_type": 1,
-                  "created_at": 1697569813,
-                  "updated_at": "2023-10-17T19:10:13.918Z",
-                  "private": false,
-                  "status": "sent",
-                  "source_id": null,
-                  "content_type": "text",
-                  "content_attributes": {},
-                  "sender_type": "User",
-                  "sender_id": 1,
-                  "external_source_ids": {},
-                  "additional_attributes": {},
-                  "processed_message_content": "Teste2",
-                  "sentiment": {},
-                  "conversation": {
-                      "assignee_id": null,
-                      "unread_count": 0,
-                      "last_activity_at": 1697569813,
-                      "contact_inbox": {
-                          "source_id": "8aca2ab4-635e-4496-93cd-6195f575a18c"
-                      }
-                  },
-                  "sender": {
-                      "id": 1,
-                      "name": "Douglas",
-                      "available_name": "Douglas",
-                      "avatar_url": "",
-                      "type": "user",
-                      "availability_status": "offline",
-                      "thumbnail": ""
-                  }
-              }
-          ],
-          "account_id": 1,
-          "uuid": "a405568b-d50a-45ac-9f3a-7961d65c5a51",
+    {
+      "meta": {
+        "sender": {
           "additional_attributes": {},
-          "agent_last_seen_at": 1697593918,
-          "assignee_last_seen_at": 0,
-          "can_reply": true,
-          "contact_last_seen_at": 0,
-          "custom_attributes": {},
-          "inbox_id": 2,
-          "labels": [],
-          "muted": false,
-          "snoozed_until": null,
-          "status": "open",
-          "created_at": 1697300327,
-          "timestamp": 1697569813,
-          "first_reply_created_at": 1697300327,
-          "unread_count": 0,
-          "last_non_activity_message": {
-              "id": 193,
-              "content": "Teste2",
-              "account_id": 1,
-              "inbox_id": 2,
-              "conversation_id": 2,
-              "message_type": 1,
-              "created_at": 1697569813,
-              "updated_at": "2023-10-17T19:10:13.918Z",
-              "private": false,
-              "status": "sent",
-              "source_id": null,
-              "content_type": "text",
-              "content_attributes": {},
-              "sender_type": "User",
-              "sender_id": 1,
-              "external_source_ids": {},
-              "additional_attributes": {},
-              "processed_message_content": "Teste2",
-              "sentiment": {},
-              "conversation": {
-                  "assignee_id": null,
-                  "unread_count": 0,
-                  "last_activity_at": 1697569813,
-                  "contact_inbox": {
-                      "source_id": "8aca2ab4-635e-4496-93cd-6195f575a18c"
-                  }
-              },
-              "sender": {
-                  "id": 1,
-                  "name": "Douglas",
-                  "available_name": "Douglas",
-                  "avatar_url": "",
-                  "type": "user",
-                  "availability_status": "offline",
-                  "thumbnail": ""
-              }
+          "availability_status": "offline",
+          "email": "qwerty@email.com",
+          "id": 6846,
+          "name": "qwerty",
+          "phone_number": "",
+          "identifier": null,
+          "thumbnail": "",
+          "custom_attributes": {
+            "data_key": "",
+            "moeda_key": "",
+            "texto_key": "",
+            "select_custom": "100"
           },
-          "last_activity_at": 1697569813,
-          "priority": null,
-          "waiting_since": 0
-      }
+          "created_at": 1716399719
+        },
+        "channel": "Channel::Api",
+        "assignee": {
+          "id": 2,
+          "account_id": 2,
+          "availability_status": "online",
+          "auto_offline": true,
+          "confirmed": true,
+          "email": "yukioarie@gmail.com",
+          "available_name": "Yukio",
+          "name": "Yukio",
+          "role": "administrator",
+          "thumbnail": ""
+        },
+        "hmac_verified": false
+      },
+      "id": 2,
+      "messages": [
+        {
+          "id": 10229,
+          "content": "Conversa foi marcada como resolvida por Yukio",
+          "account_id": 2,
+          "inbox_id": 2,
+          "conversation_id": 2,
+          "message_type": 2,
+          "created_at": 1733681968,
+          "updated_at": "2024-12-08T18:19:28.058Z",
+          "private": false,
+          "status": "sent",
+          "source_id": null,
+          "content_type": "text",
+          "content_attributes": {},
+          "sender_type": null,
+          "sender_id": null,
+          "external_source_ids": {},
+          "additional_attributes": {},
+          "processed_message_content": "Conversa foi marcada como resolvida por Yukio",
+          "sentiment": {},
+          "conversation": {
+            "assignee_id": 2,
+            "unread_count": 0,
+            "last_activity_at": 1733681968,
+            "contact_inbox": {
+              "source_id": "315d773f-43e6-4ec4-acac-fa9a04aff66b"
+            }
+          }
+        }
+      ],
+      "account_id": 2,
+      "uuid": "a2bedf57-45b1-4450-a103-3c24ca6338d1",
+      "additional_attributes": {},
+      "agent_last_seen_at": 1733681968,
+      "assignee_last_seen_at": 1733681968,
+      "can_reply": true,
+      "contact_last_seen_at": 0,
+      "custom_attributes": {},
+      "inbox_id": 2,
+      "labels": [],
+      "muted": false,
+      "snoozed_until": null,
+      "status": "resolved",
+      "created_at": 1733681416,
+      "timestamp": 1733681968,
+      "first_reply_created_at": 1733681417,
+      "unread_count": 0,
+      "last_non_activity_message": {
+        "id": 10228,
+        "content": "jkjk",
+        "account_id": 2,
+        "inbox_id": 2,
+        "conversation_id": 46,
+        "message_type": 1,
+        "created_at": 1733681753,
+        "updated_at": "2024-12-08T18:15:53.312Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "jkjk",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": 2,
+          "unread_count": 0,
+          "last_activity_at": 1733681968,
+          "contact_inbox": {
+            "source_id": "315d773f-43e6-4ec4-acac-fa9a04aff66b"
+          }
+        },
+        "sender": {
+          "id": 2,
+          "name": "Yukio",
+          "available_name": "Yukio",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": "online",
+          "thumbnail": ""
+        }
+      },
+      "last_activity_at": 1733681968,
+      "priority": null,
+      "waiting_since": 0,
+      "sla_policy_id": null
+    },
+    {
+      "meta": {
+        "sender": {
+          "additional_attributes": {},
+          "availability_status": "offline",
+          "email": "qwerty@email.com",
+          "id": 6846,
+          "name": "qwerty",
+          "phone_number": "",
+          "identifier": null,
+          "thumbnail": "",
+          "custom_attributes": {
+            "data_key": "",
+            "moeda_key": "",
+            "texto_key": "",
+            "select_custom": "100"
+          },
+          "created_at": 1716399719
+        },
+        "channel": "Channel::Api",
+        "assignee": {
+          "id": 46,
+          "account_id": 2,
+          "availability_status": "online",
+          "auto_offline": true,
+          "confirmed": true,
+          "email": "yukioarie@gmail.com",
+          "available_name": "Yukio",
+          "name": "Yukio",
+          "role": "administrator",
+          "thumbnail": ""
+        },
+        "hmac_verified": false
+      },
+      "id": 46,
+      "messages": [
+        {
+          "id": 10216,
+          "content": "fff",
+          "account_id": 2,
+          "inbox_id": 2,
+          "conversation_id": 2,
+          "message_type": 1,
+          "created_at": 1733681259,
+          "updated_at": "2024-12-08T18:07:39.000Z",
+          "private": false,
+          "status": "sent",
+          "source_id": null,
+          "content_type": "text",
+          "content_attributes": {},
+          "sender_type": "User",
+          "sender_id": 2,
+          "external_source_ids": {},
+          "additional_attributes": {},
+          "processed_message_content": "fff",
+          "sentiment": {},
+          "conversation": {
+            "assignee_id": 2,
+            "unread_count": 0,
+            "last_activity_at": 1733681259,
+            "contact_inbox": {
+              "source_id": "642cd9bb-a2da-47c7-b5b2-8f335a95e311"
+            }
+          },
+          "sender": {
+            "id": 2,
+            "name": "Yukio",
+            "available_name": "Yukio",
+            "avatar_url": "",
+            "type": "user",
+            "availability_status": "online",
+            "thumbnail": ""
+          }
+        }
+      ],
+      "account_id": 2,
+      "uuid": "4c948f07-9b18-4bb1-b343-a7b3e9e41538",
+      "additional_attributes": {},
+      "agent_last_seen_at": 1733681557,
+      "assignee_last_seen_at": 1733681557,
+      "can_reply": true,
+      "contact_last_seen_at": 0,
+      "custom_attributes": {},
+      "inbox_id": 2,
+      "labels": [],
+      "muted": false,
+      "snoozed_until": null,
+      "status": "open",
+      "created_at": 1733681258,
+      "timestamp": 1733681259,
+      "first_reply_created_at": 1733681259,
+      "unread_count": 0,
+      "last_non_activity_message": {
+        "id": 10216,
+        "content": "fff",
+        "account_id": 2,
+        "inbox_id": 2,
+        "conversation_id": 2,
+        "message_type": 1,
+        "created_at": 1733681259,
+        "updated_at": "2024-12-08T18:07:39.000Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "fff",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": 2,
+          "unread_count": 0,
+          "last_activity_at": 1733681259,
+          "contact_inbox": {
+            "source_id": "642cd9bb-a2da-47c7-b5b2-8f335a95e311"
+          }
+        },
+        "sender": {
+          "id": 2,
+          "name": "Yukio",
+          "available_name": "Yukio",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": "online",
+          "thumbnail": ""
+        }
+      },
+      "last_activity_at": 1733681259,
+      "priority": null,
+      "waiting_since": 0,
+      "sla_policy_id": null
+    },
+    {
+      "meta": {
+        "sender": {
+          "additional_attributes": {},
+          "availability_status": "offline",
+          "email": "qwerty@email.com",
+          "id": 6846,
+          "name": "qwerty",
+          "phone_number": "",
+          "identifier": null,
+          "thumbnail": "",
+          "custom_attributes": {
+            "data_key": "",
+            "moeda_key": "",
+            "texto_key": "",
+            "select_custom": "100"
+          },
+          "created_at": 1716399719
+        },
+        "channel": "Channel::Api",
+        "assignee": {
+          "id": 2,
+          "account_id": 2,
+          "availability_status": "online",
+          "auto_offline": true,
+          "confirmed": true,
+          "email": "yukioarie@gmail.com",
+          "available_name": "Yukio",
+          "name": "Yukio",
+          "role": "administrator",
+          "thumbnail": ""
+        },
+        "hmac_verified": false
+      },
+      "id": 44,
+      "messages": [
+        {
+          "id": 10214,
+          "content": "ddd",
+          "account_id": 2,
+          "inbox_id": 2,
+          "conversation_id": 44,
+          "message_type": 1,
+          "created_at": 1733681232,
+          "updated_at": "2024-12-08T18:07:12.533Z",
+          "private": false,
+          "status": "sent",
+          "source_id": null,
+          "content_type": "text",
+          "content_attributes": {},
+          "sender_type": "User",
+          "sender_id": 2,
+          "external_source_ids": {},
+          "additional_attributes": {},
+          "processed_message_content": "ddd",
+          "sentiment": {},
+          "conversation": {
+            "assignee_id": 2,
+            "unread_count": 0,
+            "last_activity_at": 1733681232,
+            "contact_inbox": {
+              "source_id": "ad54a8fb-50a7-48a6-9d3b-a45e0773f254"
+            }
+          },
+          "sender": {
+            "id": 2,
+            "name": "Yukio",
+            "available_name": "Yukio",
+            "avatar_url": "",
+            "type": "user",
+            "availability_status": "online",
+            "thumbnail": ""
+          }
+        }
+      ],
+      "account_id": 2,
+      "uuid": "2eab2eb6-6915-42f0-83e9-bfb6bff5cac8",
+      "additional_attributes": {},
+      "agent_last_seen_at": 1733681553,
+      "assignee_last_seen_at": 1733681553,
+      "can_reply": true,
+      "contact_last_seen_at": 0,
+      "custom_attributes": {},
+      "inbox_id": 2,
+      "labels": [],
+      "muted": false,
+      "snoozed_until": null,
+      "status": "open",
+      "created_at": 1733681231,
+      "timestamp": 1733681232,
+      "first_reply_created_at": 1733681232,
+      "unread_count": 0,
+      "last_non_activity_message": {
+        "id": 10214,
+        "content": "ddd",
+        "account_id": 2,
+        "inbox_id": 2,
+        "conversation_id": 44,
+        "message_type": 1,
+        "created_at": 1733681232,
+        "updated_at": "2024-12-08T18:07:12.533Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "ddd",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": 2,
+          "unread_count": 0,
+          "last_activity_at": 1733681232,
+          "contact_inbox": {
+            "source_id": "ad54a8fb-50a7-48a6-9d3b-a45e0773f254"
+          }
+        },
+        "sender": {
+          "id": 2,
+          "name": "Yukio",
+          "available_name": "Yukio",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": "online",
+          "thumbnail": ""
+        }
+      },
+      "last_activity_at": 1733681232,
+      "priority": null,
+      "waiting_since": 0,
+      "sla_policy_id": null
+    },
+    {
+      "meta": {
+        "sender": {
+          "additional_attributes": {},
+          "availability_status": "offline",
+          "email": "qwerty@email.com",
+          "id": 6846,
+          "name": "qwerty",
+          "phone_number": "",
+          "identifier": null,
+          "thumbnail": "",
+          "custom_attributes": {
+            "data_key": "",
+            "moeda_key": "",
+            "texto_key": "",
+            "select_custom": "100"
+          },
+          "created_at": 1716399719
+        },
+        "channel": "Channel::Api",
+        "hmac_verified": false
+      },
+      "id": 43,
+      "messages": [
+        {
+          "id": 10212,
+          "content": "ass",
+          "account_id": 2,
+          "inbox_id": 2,
+          "conversation_id": 43,
+          "message_type": 1,
+          "created_at": 1733680992,
+          "updated_at": "2024-12-08T18:03:12.655Z",
+          "private": false,
+          "status": "sent",
+          "source_id": null,
+          "content_type": "text",
+          "content_attributes": {},
+          "sender_type": "User",
+          "sender_id": 2,
+          "external_source_ids": {},
+          "additional_attributes": {},
+          "processed_message_content": "ass",
+          "sentiment": {},
+          "conversation": {
+            "assignee_id": null,
+            "unread_count": 0,
+            "last_activity_at": 1733680992,
+            "contact_inbox": {
+              "source_id": "222a01f0-9428-4d72-92ab-9b57616c9a8e"
+            }
+          },
+          "sender": {
+            "id": 2,
+            "name": "Yukio",
+            "available_name": "Yukio",
+            "avatar_url": "",
+            "type": "user",
+            "availability_status": "online",
+            "thumbnail": ""
+          }
+        }
+      ],
+      "account_id": 2,
+      "uuid": "26c8cf92-091a-43d3-9c13-68f346a2ecd7",
+      "additional_attributes": {},
+      "agent_last_seen_at": 1733681554,
+      "assignee_last_seen_at": 0,
+      "can_reply": true,
+      "contact_last_seen_at": 0,
+      "custom_attributes": {},
+      "inbox_id": 2,
+      "labels": [],
+      "muted": false,
+      "snoozed_until": null,
+      "status": "open",
+      "created_at": 1733680991,
+      "timestamp": 1733680992,
+      "first_reply_created_at": 1733680992,
+      "unread_count": 0,
+      "last_non_activity_message": {
+        "id": 10212,
+        "content": "ass",
+        "account_id": 2,
+        "inbox_id": 2,
+        "conversation_id": 43,
+        "message_type": 1,
+        "created_at": 1733680992,
+        "updated_at": "2024-12-08T18:03:12.655Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "ass",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": null,
+          "unread_count": 0,
+          "last_activity_at": 1733680992,
+          "contact_inbox": {
+            "source_id": "222a01f0-9428-4d72-92ab-9b57616c9a8e"
+          }
+        },
+        "sender": {
+          "id": 2,
+          "name": "Yukio",
+          "available_name": "Yukio",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": "online",
+          "thumbnail": ""
+        }
+      },
+      "last_activity_at": 1733680992,
+      "priority": null,
+      "waiting_since": 0,
+      "sla_policy_id": null
+    },
+    {
+      "meta": {
+        "sender": {
+          "additional_attributes": {},
+          "availability_status": "offline",
+          "email": "qwerty@email.com",
+          "id": 6846,
+          "name": "qwerty",
+          "phone_number": "",
+          "identifier": null,
+          "thumbnail": "",
+          "custom_attributes": {
+            "data_key": "",
+            "moeda_key": "",
+            "texto_key": "",
+            "select_custom": "100"
+          },
+          "created_at": 1716399719
+        },
+        "channel": "Channel::Api",
+        "hmac_verified": false
+      },
+      "id": 42,
+      "messages": [
+        {
+          "id": 10211,
+          "content": "eee",
+          "account_id": 2,
+          "inbox_id": 2,
+          "conversation_id": 42,
+          "message_type": 1,
+          "created_at": 1733549769,
+          "updated_at": "2024-12-07T05:36:09.711Z",
+          "private": false,
+          "status": "sent",
+          "source_id": null,
+          "content_type": "text",
+          "content_attributes": {},
+          "sender_type": "User",
+          "sender_id": 2,
+          "external_source_ids": {},
+          "additional_attributes": {},
+          "processed_message_content": "eee",
+          "sentiment": {},
+          "conversation": {
+            "assignee_id": null,
+            "unread_count": 0,
+            "last_activity_at": 1733549769,
+            "contact_inbox": {
+              "source_id": "9b4707f8-e923-4edc-8029-13cc963a4be4"
+            }
+          },
+          "sender": {
+            "id": 2,
+            "name": "Yukio",
+            "available_name": "Yukio",
+            "avatar_url": "",
+            "type": "user",
+            "availability_status": "online",
+            "thumbnail": ""
+          }
+        }
+      ],
+      "account_id": 2,
+      "uuid": "cf5f90c6-2a37-4c39-9c8d-c502c19b180f",
+      "additional_attributes": {},
+      "agent_last_seen_at": 1733681554,
+      "assignee_last_seen_at": 0,
+      "can_reply": true,
+      "contact_last_seen_at": 0,
+      "custom_attributes": {},
+      "inbox_id": 2,
+      "labels": [],
+      "muted": false,
+      "snoozed_until": null,
+      "status": "open",
+      "created_at": 1733549768,
+      "timestamp": 1733549769,
+      "first_reply_created_at": 1733549769,
+      "unread_count": 0,
+      "last_non_activity_message": {
+        "id": 10211,
+        "content": "eee",
+        "account_id": 2,
+        "inbox_id": 2,
+        "conversation_id": 42,
+        "message_type": 1,
+        "created_at": 1733549769,
+        "updated_at": "2024-12-07T05:36:09.711Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "eee",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": null,
+          "unread_count": 0,
+          "last_activity_at": 1733549769,
+          "contact_inbox": {
+            "source_id": "9b4707f8-e923-4edc-8029-13cc963a4be4"
+          }
+        },
+        "sender": {
+          "id": 2,
+          "name": "Yukio",
+          "available_name": "Yukio",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": "online",
+          "thumbnail": ""
+        }
+      },
+      "last_activity_at": 1733549769,
+      "priority": null,
+      "waiting_since": 0,
+      "sla_policy_id": null
+    },
+    {
+      "meta": {
+        "sender": {
+          "additional_attributes": {},
+          "availability_status": "offline",
+          "email": "qwerty@email.com",
+          "id": 6846,
+          "name": "qwerty",
+          "phone_number": "",
+          "identifier": null,
+          "thumbnail": "",
+          "custom_attributes": {
+            "data_key": "",
+            "moeda_key": "",
+            "texto_key": "",
+            "select_custom": "100"
+          },
+          "created_at": 1716399719
+        },
+        "channel": "Channel::Api",
+        "assignee": {
+          "id": 2,
+          "account_id": 2,
+          "availability_status": "online",
+          "auto_offline": true,
+          "confirmed": true,
+          "email": "yukioarie@gmail.com",
+          "available_name": "Yukio",
+          "name": "Yukio",
+          "role": "administrator",
+          "thumbnail": ""
+        },
+        "hmac_verified": false
+      },
+      "id": 41,
+      "messages": [
+        {
+          "id": 10210,
+          "content": "asd",
+          "account_id": 2,
+          "inbox_id": 2,
+          "conversation_id": 41,
+          "message_type": 1,
+          "created_at": 1733519300,
+          "updated_at": "2024-12-06T21:08:20.486Z",
+          "private": false,
+          "status": "sent",
+          "source_id": null,
+          "content_type": "text",
+          "content_attributes": {},
+          "sender_type": "User",
+          "sender_id": 2,
+          "external_source_ids": {},
+          "additional_attributes": {},
+          "processed_message_content": "asd",
+          "sentiment": {},
+          "conversation": {
+            "assignee_id": 2,
+            "unread_count": 0,
+            "last_activity_at": 1733519300,
+            "contact_inbox": {
+              "source_id": "1b4e9a6e-7f71-4e89-897c-9fc6bb4e25b7"
+            }
+          },
+          "sender": {
+            "id": 2,
+            "name": "Yukio",
+            "available_name": "Yukio",
+            "avatar_url": "",
+            "type": "user",
+            "availability_status": "online",
+            "thumbnail": ""
+          }
+        }
+      ],
+      "account_id": 2,
+      "uuid": "7ca4790b-7515-4b90-85bf-124bc9442ae2",
+      "additional_attributes": {},
+      "agent_last_seen_at": 1733681555,
+      "assignee_last_seen_at": 1733681555,
+      "can_reply": true,
+      "contact_last_seen_at": 0,
+      "custom_attributes": {},
+      "inbox_id": 2,
+      "labels": [],
+      "muted": false,
+      "snoozed_until": null,
+      "status": "open",
+      "created_at": 1733519299,
+      "timestamp": 1733519300,
+      "first_reply_created_at": 1733519300,
+      "unread_count": 0,
+      "last_non_activity_message": {
+        "id": 10210,
+        "content": "asd",
+        "account_id": 2,
+        "inbox_id": 2,
+        "conversation_id": 41,
+        "message_type": 1,
+        "created_at": 1733519300,
+        "updated_at": "2024-12-06T21:08:20.486Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "asd",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": 2,
+          "unread_count": 0,
+          "last_activity_at": 1733519300,
+          "contact_inbox": {
+            "source_id": "1b4e9a6e-7f71-4e89-897c-9fc6bb4e25b7"
+          }
+        },
+        "sender": {
+          "id": 2,
+          "name": "Yukio",
+          "available_name": "Yukio",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": "online",
+          "thumbnail": ""
+        }
+      },
+      "last_activity_at": 1733519300,
+      "priority": null,
+      "waiting_since": 0,
+      "sla_policy_id": null
+    },
+    {
+      "meta": {
+        "sender": {
+          "additional_attributes": {},
+          "availability_status": "offline",
+          "email": "qwerty@email.com",
+          "id": 6846,
+          "name": "qwerty",
+          "phone_number": "",
+          "identifier": null,
+          "thumbnail": "",
+          "custom_attributes": {
+            "data_key": "",
+            "moeda_key": "",
+            "texto_key": "",
+            "select_custom": "100"
+          },
+          "created_at": 1716399719
+        },
+        "channel": "Channel::Api",
+        "assignee": {
+          "id": 2,
+          "account_id": 2,
+          "availability_status": "online",
+          "auto_offline": true,
+          "confirmed": true,
+          "email": "yukioarie@gmail.com",
+          "available_name": "Yukio",
+          "name": "Yukio",
+          "role": "administrator",
+          "thumbnail": ""
+        },
+        "hmac_verified": false
+      },
+      "id": 40,
+      "messages": [
+        {
+          "id": 10208,
+          "content": "teste",
+          "account_id": 2,
+          "inbox_id": 2,
+          "conversation_id": 40,
+          "message_type": 1,
+          "created_at": 1733519236,
+          "updated_at": "2024-12-06T21:07:16.464Z",
+          "private": false,
+          "status": "sent",
+          "source_id": null,
+          "content_type": "text",
+          "content_attributes": {},
+          "sender_type": "User",
+          "sender_id": 2,
+          "external_source_ids": {},
+          "additional_attributes": {},
+          "processed_message_content": "teste",
+          "sentiment": {},
+          "conversation": {
+            "assignee_id": 2,
+            "unread_count": 0,
+            "last_activity_at": 1733519236,
+            "contact_inbox": {
+              "source_id": "bbda415e-605c-4250-8034-93383ad144e5"
+            }
+          },
+          "sender": {
+            "id": 2,
+            "name": "Yukio",
+            "available_name": "Yukio",
+            "avatar_url": "",
+            "type": "user",
+            "availability_status": "online",
+            "thumbnail": ""
+          }
+        }
+      ],
+      "account_id": 2,
+      "uuid": "436df53f-d58a-44e0-8c85-5df510291eca",
+      "additional_attributes": {},
+      "agent_last_seen_at": 1733681556,
+      "assignee_last_seen_at": 1733681556,
+      "can_reply": true,
+      "contact_last_seen_at": 0,
+      "custom_attributes": {},
+      "inbox_id": 2,
+      "labels": [],
+      "muted": false,
+      "snoozed_until": null,
+      "status": "open",
+      "created_at": 1733519225,
+      "timestamp": 1733519236,
+      "first_reply_created_at": 1733519226,
+      "unread_count": 0,
+      "last_non_activity_message": {
+        "id": 10208,
+        "content": "teste",
+        "account_id": 2,
+        "inbox_id": 2,
+        "conversation_id": 40,
+        "message_type": 1,
+        "created_at": 1733519236,
+        "updated_at": "2024-12-06T21:07:16.464Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "teste",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": 2,
+          "unread_count": 0,
+          "last_activity_at": 1733519236,
+          "contact_inbox": {
+            "source_id": "bbda415e-605c-4250-8034-93383ad144e5"
+          }
+        },
+        "sender": {
+          "id": 2,
+          "name": "Yukio",
+          "available_name": "Yukio",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": "online",
+          "thumbnail": ""
+        }
+      },
+      "last_activity_at": 1733519236,
+      "priority": null,
+      "waiting_since": 0,
+      "sla_policy_id": null
+    },
+    {
+      "meta": {
+        "sender": {
+          "additional_attributes": {},
+          "availability_status": "offline",
+          "email": "qwerty@email.com",
+          "id": 6846,
+          "name": "qwerty",
+          "phone_number": "",
+          "identifier": null,
+          "thumbnail": "",
+          "custom_attributes": {
+            "data_key": "",
+            "moeda_key": "",
+            "texto_key": "",
+            "select_custom": "100"
+          },
+          "created_at": 1716399719
+        },
+        "channel": "Channel::Api",
+        "assignee": {
+          "id": 2,
+          "account_id": 2,
+          "availability_status": "online",
+          "auto_offline": true,
+          "confirmed": true,
+          "email": "yukioarie@gmail.com",
+          "available_name": "Yukio",
+          "name": "Yukio",
+          "role": "administrator",
+          "thumbnail": ""
+        },
+        "hmac_verified": false
+      },
+      "id": 28,
+      "messages": [
+        {
+          "id": 10061,
+          "content": "",
+          "account_id": 2,
+          "inbox_id": 2,
+          "conversation_id": 28,
+          "message_type": 1,
+          "created_at": 1717019306,
+          "updated_at": "2024-05-29T21:48:26.062Z",
+          "private": false,
+          "status": "sent",
+          "source_id": null,
+          "content_type": "text",
+          "content_attributes": {},
+          "sender_type": "User",
+          "sender_id": 2,
+          "external_source_ids": {},
+          "additional_attributes": {},
+          "processed_message_content": "",
+          "sentiment": {},
+          "conversation": {
+            "assignee_id": 2,
+            "unread_count": 0,
+            "last_activity_at": 1717019306,
+            "contact_inbox": {
+              "source_id": "ac780374-72c6-4caf-9d42-3fdf909f3095"
+            }
+          },
+          "attachments": [
+            {
+              "id": 2620,
+              "message_id": 10061,
+              "file_type": "file",
+              "account_id": 2,
+              "extension": null,
+              "data_url": "https://chatwoot.woofedcrm.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ0pmIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--00dedb39f26ae521510425c4b373c4a72734244f/download.png",
+              "thumb_url": "https://chatwoot.woofedcrm.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ0pmIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--00dedb39f26ae521510425c4b373c4a72734244f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--87aec6c89ddb8fb0db919201603f3410be9cad37/download.png",
+              "file_size": 6234,
+              "width": 225,
+              "height": 225
+            }
+          ],
+          "sender": {
+            "id": 2,
+            "name": "Yukio",
+            "available_name": "Yukio",
+            "avatar_url": "",
+            "type": "user",
+            "availability_status": "online",
+            "thumbnail": ""
+          }
+        }
+      ],
+      "account_id": 2,
+      "uuid": "efe6ad24-9b5c-4407-bc91-8f3d6d891180",
+      "additional_attributes": {},
+      "agent_last_seen_at": 1721756505,
+      "assignee_last_seen_at": 1721756505,
+      "can_reply": true,
+      "contact_last_seen_at": 0,
+      "custom_attributes": {},
+      "inbox_id": 2,
+      "labels": [],
+      "muted": false,
+      "snoozed_until": null,
+      "status": "open",
+      "created_at": 1717019275,
+      "timestamp": 1717019306,
+      "first_reply_created_at": 1717019276,
+      "unread_count": 0,
+      "last_non_activity_message": {
+        "id": 10062,
+        "content": "Mensagem com arquivo",
+        "account_id": 2,
+        "inbox_id": 2,
+        "conversation_id": 28,
+        "message_type": 1,
+        "created_at": 1717019306,
+        "updated_at": "2024-05-29T21:48:26.060Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "Mensagem com arquivo",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": 2,
+          "unread_count": 0,
+          "last_activity_at": 1717019306,
+          "contact_inbox": {
+            "source_id": "ac780374-72c6-4caf-9d42-3fdf909f3095"
+          }
+        },
+        "attachments": [
+          {
+            "id": 2619,
+            "message_id": 10062,
+            "file_type": "file",
+            "account_id": 2,
+            "extension": null,
+            "data_url": "https://chatwoot.woofedcrm.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ05mIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--eac286451c82bcad348c6d585b2791d716fb5ca5/download%20(1).png",
+            "thumb_url": "https://chatwoot.woofedcrm.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ05mIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--eac286451c82bcad348c6d585b2791d716fb5ca5/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--87aec6c89ddb8fb0db919201603f3410be9cad37/download%20(1).png",
+            "file_size": 9961,
+            "width": 225,
+            "height": 225
+          }
+        ],
+        "sender": {
+          "id": 2,
+          "name": "Yukio",
+          "available_name": "Yukio",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": "online",
+          "thumbnail": ""
+        }
+      },
+      "last_activity_at": 1717019306,
+      "priority": null,
+      "waiting_since": 0,
+      "sla_policy_id": null
+    }
   ]
 }
