@@ -3,8 +3,8 @@ class Accounts::Apps::Chatwoots::ExportContactWorker
   sidekiq_options queue: :chatwoot_webhooks
 
   def perform(chatwoot_id, contact_id)
-    contact = Contact.find(contact_id)
-    chatwoot = Apps::Chatwoot.find(chatwoot_id)
-    Accounts::Apps::Chatwoots::ExportContact.call(chatwoot, contact)
+    contact = Contact.find_by_id(contact_id)
+    chatwoot = Apps::Chatwoot.find_by_id(chatwoot_id)
+    Accounts::Apps::Chatwoots::ExportContact.call(chatwoot, contact) if contact.present? && chatwoot.present?
   end
 end
