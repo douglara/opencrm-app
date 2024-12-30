@@ -1,6 +1,4 @@
 class Apps::ChatwootsController < ActionController::Base
-  include WhiteLabelConcern
-
   before_action :load_chatwoot
   before_action :authenticate_by_token, if: :check_user_authentication
   skip_before_action :verify_authenticity_token, except: :embedding
@@ -22,10 +20,8 @@ class Apps::ChatwootsController < ActionController::Base
     event = JSON.parse(params['event'])
     @user_email = event['data']['currentAgent']['email']
     user = User.find_by(email: @user_email, account_id: @chatwoot.account_id)
-    if user.blank?
-      set_white_label_defaults
-      return render 'user_not_found', status: 400
-    end
+    return render 'user_not_found', status: 400 if user.blank?
+
     sign_out_all_scopes
     sign_in(user)
     redirect_to embedding_apps_chatwoots_path(token: params['token'])
