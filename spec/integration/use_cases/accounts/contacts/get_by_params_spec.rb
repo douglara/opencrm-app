@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe Accounts::Contacts::GetByParams, type: :request do
   describe 'success' do
     let!(:account) { create(:account) }
-    let!(:contact) { create(:contact, account: account) }
+    let!(:contact) { create(:contact, account:, phone: '+5541988443322') }
     let!(:contact_with_chatwoot_identifier) do
-      create(:contact, account: account, additional_attributes: { 'chatwoot_identifier' => '123456' }, email: 'user@email.com', phone: '+55123456789',
+      create(:contact, account:, additional_attributes: { 'chatwoot_identifier' => '123456' }, email: 'user@email.com', phone: '+55123456789',
                        full_name: 'contact with chatwoot_identifier')
     end
 
     it 'should find by email' do
-      result = Accounts::Contacts::GetByParams.call(account, { 'email': 'tim@maia.com' })
+      result = Accounts::Contacts::GetByParams.call(account, { 'email': contact.email })
       expect(result[:ok]).to eq(contact)
     end
 
@@ -20,7 +20,7 @@ RSpec.describe Accounts::Contacts::GetByParams, type: :request do
     end
 
     it 'should find by phone and email' do
-      result = Accounts::Contacts::GetByParams.call(account, { 'email': 'tim@maia.com', 'phone': '+5541988443322' })
+      result = Accounts::Contacts::GetByParams.call(account, { 'email': contact.email, 'phone': '+5541988443322' })
       expect(result[:ok]).to eq(contact)
     end
 
@@ -31,7 +31,7 @@ RSpec.describe Accounts::Contacts::GetByParams, type: :request do
     end
 
     it 'should find by email and invalid phone' do
-      result = Accounts::Contacts::GetByParams.call(account, { 'email': 'tim@maia.com', 'phone': '88443322' })
+      result = Accounts::Contacts::GetByParams.call(account, { 'email': contact.email, 'phone': '88443322' })
       expect(result[:ok]).to eq(contact)
     end
 
@@ -41,7 +41,7 @@ RSpec.describe Accounts::Contacts::GetByParams, type: :request do
     end
 
     it 'should find by phone without 9 digit and email' do
-      result = Accounts::Contacts::GetByParams.call(account, { 'email': 'tim@maia.com', 'phone': '+554188443322' })
+      result = Accounts::Contacts::GetByParams.call(account, { 'email': contact.email, 'phone': '+554188443322' })
       expect(result[:ok]).to eq(contact)
     end
 
@@ -74,7 +74,7 @@ RSpec.describe Accounts::Contacts::GetByParams, type: :request do
   end
   describe 'failed' do
     let!(:account) { create(:account) }
-    let!(:contact) { create(:contact, account: account, email: '', phone: '', full_name: 'teste') }
+    let!(:contact) { create(:contact, account:, email: '', phone: '', full_name: 'teste') }
 
     context 'when there are empty values in params hash keys' do
       it 'when phone and email values are empty' do
