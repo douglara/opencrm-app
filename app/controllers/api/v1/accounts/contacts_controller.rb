@@ -1,16 +1,16 @@
 class Api::V1::Accounts::ContactsController < Api::V1::InternalController
   def show
-    @contact = @current_user.account.contacts.find(params["id"])
+    @contact = Contact.find(params['id'])
 
     if @contact
-      render json: @contact, include: [:deals, :events], status: :ok
+      render json: @contact, include: %i[deals events], status: :ok
     else
       render json: { errors: 'Not found' }, status: :not_found
     end
   end
 
   def create
-    @contact = @current_user.account.contacts.new(contact_params)
+    @contact = Contact.new(contact_params)
 
     if @contact.save
       render json: @contact, status: :created
@@ -23,7 +23,7 @@ class Api::V1::Accounts::ContactsController < Api::V1::InternalController
     existing_contact = Accounts::Contacts::GetByParams.call(@current_user.account, contact_params.to_h)[:ok]
 
     if existing_contact.nil?
-      @contact = @current_user.account.contacts.new(contact_params)
+      @contact = Contact.new(contact_params)
       status = :created
     else
       @contact = existing_contact
@@ -32,14 +32,14 @@ class Api::V1::Accounts::ContactsController < Api::V1::InternalController
     end
 
     if @contact.save
-      render json: @contact, status: status
+      render(json: @contact, status:)
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
   end
 
   def search
-    contacts = @current_user.account.contacts.ransack(params[:query])
+    contacts = Contact.ransack(params[:query])
 
     @pagy, @contacts = pagy(contacts.result, metadata: %i[page items count pages from last to prev next])
     render json: { data: @contacts,

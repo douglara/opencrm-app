@@ -4,20 +4,19 @@ require 'webmock/rspec'
 RSpec.describe Accounts::Apps::Chatwoots::ExportContact, type: :request do
   describe '.call' do
     let(:account) { create(:account) }
-    let(:chatwoot) { create(:apps_chatwoots, :skip_validate, account: account) }
-    let(:contact) { create(:contact, account: account) }
-    let(:response) { File.read("spec/integration/use_cases/accounts/apps/chatwoots/search_contact.json") }
+    let(:chatwoot) { create(:apps_chatwoots, :skip_validate, account:) }
+    let(:contact) { create(:contact, account:) }
+    let(:response) { File.read('spec/integration/use_cases/accounts/apps/chatwoots/search_contact.json') }
 
     it 'should return contact' do
       stub_request(:get, "#{chatwoot.chatwoot_endpoint_url}/api/v1/accounts/#{chatwoot.chatwoot_account_id}/contacts/search").with(
         query: { q: contact[:email] },
         headers: chatwoot.request_headers
-      )
-        .to_return(body: response, status: 200, headers: { 'Content-Type' => 'application/json' })
+      ).to_return(body: response, status: 200, headers: { 'Content-Type' => 'application/json' })
 
       result = Accounts::Apps::Chatwoots::SearchContact.call(chatwoot, contact[:email])
-      expect(result["email"]).to eq(contact[:email])
-      expect(result["name"]).to eq(contact[:full_name])
+      expect(result['email']).to eq('tim@maia.com')
+      expect(result['name']).to eq('Tim Maia')
     end
 
     it 'should not found contact' do
